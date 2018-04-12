@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Per">
+    <output-path>$PROJECT_DIR$/classes/artifacts/Per</output-path>
+    <root id="archive" name="Per.war">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

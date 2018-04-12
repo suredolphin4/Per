@@ -1,0 +1,34 @@
+/* 
+fieldset { 
+	border:1px solid green;
+	margin-botton:1px;
+	width:44.2em;
+}
+*/
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid green;
+  color:green;
+  font-size:90%;
+  text-align:left;
+}
+
+#admin_thesis_addForm .singlecol {padding:1em;}
+#admin_thesis_addForm .twocol {float:left; width:20em; padding:1em;}
+#admin_thesis_addForm fieldset label {clear:both;display:block;margin:3px 0;}
+#admin_thesis_addForm label {float:right;}
+
+#admin_thesis_editForm .singlecol {padding:1em;}
+#admin_thesis_editForm .twocol {float:left; width:20em; padding:1em;}
+#admin_thesis_editForm fieldset label {clear:both;display:block;margin:3px 0;}
+#admin_thesis_editForm label {float:right;}
+
+/*
+A:link { COLOR: black; TEXT-DECORATION: none; font-weight: normal }
+A:visited { COLOR: black; TEXT-DECORATION: none; font-weight: normal }
+A:active { COLOR: black; TEXT-DECORATION: none }
+*/
+#admin_thesis_addForm  A:link { COLOR: blue; TEXT-DECORATION: none; font-weight: normal }
+#admin_thesis_addForm  A:hover { COLOR: red; TEXT-DECORATION: none; font-weight: none }
+#admin_thesis_editForm A:link { COLOR: blue; TEXT-DECORATION: none; font-weight: normal }
+#admin_thesis_editForm A:hover { COLOR: red; TEXT-DECORATION: none; font-weight: none }

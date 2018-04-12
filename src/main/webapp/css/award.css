@@ -1,0 +1,26 @@
+/* 
+fieldset { 
+	border:1px solid green;
+	margin-botton:1px;
+	width:44.2em;
+}
+*/
+
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid green;
+  color:green;
+  font-size:90%;
+  text-align:left;
+}
+
+/* #award_append_form fieldset div {float:left; width:20em; padding:1em;}*/
+#award_append_form .singlecol {padding:1em;}
+#award_append_form .twocol {float:left; width:20em; padding:1em;}
+#award_append_form fieldset label {clear:both;display:block;margin:3px 0;}
+#award_append_form label {float:right;}
+
+#award_edit_form .singlecol {padding:1em;}
+#award_edit_form .twocol {float:left; width:20em; padding:1em;}
+#award_edit_form fieldset label {clear:both;display:block;margin:3px 0;}
+#award_edit_form label {float:right;}

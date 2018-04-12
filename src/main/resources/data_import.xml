@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+	<table name="t_lw" class="com.performances.model.TLw" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="lwid">
+			<where id="title">title</where>
+			<where id="pubtitle">pubtitle</where>
+			<where id="firstauthor">firstauthor</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="pubkind">刊物类别</map>
+			<map id="title">论文题目</map>
+			<map id="status">论文状态</map>			
+			<map id="pubtitle">刊物名称</map>
+			<map id="pubcode">标准刊号</map>
+			<map id="pubranking">国内期刊综合排名</map>
+			<map id="inter">是否国际刊物</map>
+			<map id="factor">期刊当年影响因子数值</map>
+			<map id="subclass">小类分区</map>
+			<map id="topcomm">顶级说明</map>
+			<map id="roll">卷</map>
+			<map id="expect">期</map>
+			<map id="begin2end">起止页</map>
+			<map id="unit">单位排名</map>
+			<map id="interpartner">是否为国际合作论文</map>
+			<map id="numauthor">作者人数</map>
+			<map id="commauthor">通讯作者</map>
+			<map id="firstauthor">第1作者</map>
+			<map id="secauthor">第2作者</map>
+			<map id="threeauthor">第3作者</map>
+			<map id="fourauthor">第4作者</map>
+			<map id="fiveauthor">第5作者</map>
+			<map id="otherauthor">其他作者</map>
+            <map id="commauthorcode">通讯作者arp</map>
+			<map id="firstauthorcode">第1作者arp</map>
+			<map id="secauthorcode">第2作者arp</map>
+			<map id="threeauthorcode">第3作者arp</map>
+			<map id="fourauthorcode">第4作者arp</map>
+			<map id="fiveauthorcode">第5作者arp</map>
+			<map id="otherauthorcode">其他作者arp</map>			
+			<map id="examinestatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+		    <map id="auditOpinion">审核意见</map>
+
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+<!-- 	yangxinpeng 期刊-->	
+<table name="t_pubpart" class="com.performances.model.TPubPart" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="4" key="NULL"></match>
+			<match type="0" key=">9人">10</match>
+			<match type="4" key="(空白)"></match>
+			<match type="4" key=""></match>
+			<match type="1" key="万">10000</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="tpid">
+			<where id="title">title</where>
+			<where id="issn">issn</where>
+		<!-- 	<where id="factor">factor</where>
+			<where id="zone">zone</where>
+			<where id="pubkind">pubkind</where> -->
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<!-- <map id="id">id</map> -->
+			<map id="title">名称</map>
+			<map id="issn">标准刊号</map>
+			<map id="factor">期刊当年影响因子数值</map>
+			<map id="zone">小类分区</map>
+			<map id="pubkind">刊物类别</map>
+			<map id="topcomm">顶级说明</map>
+			<map id="pubranking">国内期刊综合排名</map>
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+<!-- 	yangxinpeng person-->	
+<table name="t_person" class="com.performances.model.TPerson" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="4" key=""></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="personid">
+			<!-- <where id="name">name</where> -->
+			<where id="usercode">usercode</where>
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<!-- <map id="id">id</map> 姓名	员工编号	所属部门	所属研究室	研究室序号	所属领域	员工类型	申报级别-->
+			<map id="personcate">申报级别</map>
+			<map id="persontype">员工类型</map>
+			<map id="name">姓名</map>
+			<map id="domain">所属领域</map>
+			<map id="domaincode">领域序号</map>
+			<map id="lab">所属研究室</map>
+			<map id="labnum">研究室序号</map>
+			<map id="department">所属部门</map>
+			<map id="usercode">员工编号</map>
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+<!-- 	yangxinpeng user-->	
+<table name="t_user" class="com.performances.model.TUser" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="userid">
+			<!-- <where id="name">name</where> -->
+			<where id="usercode">usercode</where>
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">姓名</map>
+			<map id="userTy">员工类型</map>
+			<map id="domain">所属领域</map>
+			<map id="domainnum">领域序号</map>
+			<map id="lab">所属研究室</map>
+			<map id="labnum">研究室序号</map>
+			<map id="department">所属部门</map>
+			<map id="usercode">员工编号</map>
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+<!-- 	yangxinpeng domain-->	
+<table name="t_domain" class="com.performances.model.TDomain" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="domainid">
+			<where id="name">name</where>
+			<!-- <where id="usercode">usercode</where> -->
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">领域名称</map>
+		<!-- 	<map id="userTy">员工类型</map>
+			<map id="domain">所属领域</map>
+			<map id="domainnum">领域序号</map>
+			<map id="lab">所属研究室</map>
+			<map id="labnum">研究室序号</map>
+			<map id="department">所属部门</map>
+			<map id="usercode">员工编号</map> -->
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+<!-- 	yangxinpeng lab-->	
+<table name="t_lab" class="com.performances.model.TLab" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="labid">
+			<where id="name">name</where>
+			<where id="code">code</where>
+			<!-- <where id="usercode">usercode</where> -->
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">实验室名称</map>
+		 <!-- 	<map id="userTy">实验室编码</map>
+			<map id="domain">领域名称</map>
+			<map id="domainnum">领域编码</map> -->
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	yangxinpeng lwstatus-->	
+	
+	
+<table name="t_lwstutas" class="com.performances.model.TLwStutas" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="lwstatusid">
+			<where id="name">name</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">状态名称</map>
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	
+	<!-- 	yangxinpeng usertype-->	
+	
+	
+<table name="t_usertype" class="com.performances.model.TUserType" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="usertypeid">
+			<where id="name">name</where>
+			<!-- <where id="code">code</where> -->
+			<!-- <where id="usercode">usercode</where> -->
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">用户类型名称</map>
+		 	<!-- <map id="userTy">实验室编码</map>
+			<map id="domain">领域名称</map>
+			<map id="domainnum">领域编码</map> -->
+			<!--<map id="lab">所属研究室</map>
+			<map id="labnum">研究室序号</map>
+			<map id="department">所属部门</map>
+			<map id="usercode">员工编号</map> -->
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	
+	<!-- 	yangxinpeng usercate-->	
+	
+	
+<table name="t_usercate" class="com.performances.model.TUserCate" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="usercateid">
+			<where id="name">name</where>
+			<!-- <where id="code">code</where> -->
+			<!-- <where id="usercode">usercode</where> -->
+			
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">申报级别名称</map>
+		 	<!-- <map id="userTy">实验室编码</map>
+			<map id="domain">领域名称</map>
+			<map id="domainnum">领域编码</map> -->
+			<!--<map id="lab">所属研究室</map>
+			<map id="labnum">研究室序号</map>
+			<map id="department">所属部门</map>
+			<map id="usercode">员工编号</map> -->
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	Linyh graduate award-->	
+	<table name="t_yj" class="com.performances.model.TYj" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="yjid">
+			<where id="year">year</where>
+			<where id="award">award</where>
+			<where id="student">student</where>
+			<where id="teacher">teacher</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="award">奖项</map>
+			<map id="student">获奖学生</map>
+			<map id="teacher">教师</map>
+			<map id="teacherCode">教师arp</map>
+			<map id="score">分值</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	Linyh lessons -->	
+	<table name="t_sk" class="com.performances.model.TSk" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="year">year</where>
+			<where id="name">name</where>
+			<where id="teacher">teacher</where>	
+			<where id="role">role</where>
+			<where id="type">type</where>		
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="name">课程名称</map>
+			<map id="teacher">教师</map>
+			<map id="teacherCode">教师arp</map>
+			<map id="role">角色</map>
+			<map id="type">课程类型</map>
+			<map id="period">学时</map>
+			<map id="score">分值</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+	<!-- 	zhangs plan -->	
+	<table name="t_gh" class="com.performances.model.TGh" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="ghid">
+			<where id="title">title</where>
+			<where id="auditdepart">auditdepart</where>
+			<where id="firstauthorcode">firstauthorcode</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->		
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">规划题目</map>
+			<map id="auditdepart">批准实施部门</map>
+			<map id="auditdate">批准日期</map>
+			<map id="auditlevel">规划级别确认</map>
+			<map id="firstauthor">撰写人1</map>
+			<map id="firstauthorcode">撰写人1arp</map>
+			<map id="secauthor">撰写人2</map>
+			<map id="secauthorcode">撰写人2arp</map>
+			<map id="threeauthor">撰写人3</map>
+			<map id="threeauthorcode">撰写人3arp</map>
+			<map id="fourauthor">撰写人4</map>
+			<map id="fourauthorcode">撰写人4arp</map>
+			<map id="fiveauthor">撰写人5</map>
+			<map id="fiveauthorcode">撰写人5arp</map>
+			<map id="otherauthor">其他撰写人</map>
+			<map id="otherauthorcode">其他撰写人arp</map>		
+			<map id="examinestatus">审核状态</map>			
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+</table>
+
+	<!-- 	zhangs thirdAssess -->
+	<table name="t_ta" class="com.performances.model.TTa" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="taid">
+			<where id="title">title</where>
+			<where id="auditdepart">auditdepart</where>
+			<where id="firstauthorcode">firstauthorcode</where>
+		</key>
+
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">第三方评估题目</map>
+			<map id="auditdepart">委托部门</map>
+			<map id="auditdate">完成日期</map>
+			<map id="auditlevel">第三方评估级别</map>
+			<map id="firstauthor">撰写人1</map>
+			<map id="firstauthorcode">撰写人1arp</map>
+			<map id="secauthor">撰写人2</map>
+			<map id="secauthorcode">撰写人2arp</map>
+			<map id="threeauthor">撰写人3</map>
+			<map id="threeauthorcode">撰写人3arp</map>
+			<map id="fourauthor">撰写人4</map>
+			<map id="fourauthorcode">撰写人4arp</map>
+			<map id="fiveauthor">撰写人5</map>
+			<map id="fiveauthorcode">撰写人5arp</map>
+			<map id="otherauthor">其他撰写人</map>
+			<map id="otherauthorcode">其他撰写人arp</map>
+			<map id="examinestatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+		</maps>
+
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	zhangs map -->	
+	<table name="t_dt" class="com.performances.model.TDt" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="dtid">
+			<where id="title">title</where>
+			<where id="maptype">maptype</where>
+			<where id="firsteditor">firsteditor</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->		
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">地图名称</map>
+			<map id="totalpage">总页数</map>
+			<map id="maptype">类型</map>
+			<map id="firsteditor">主编1</map>
+			<map id="firsteditorcode">主编1arp</map>
+			<map id="seceditor">主编2</map>
+			<map id="seceditorcode">主编2arp</map>
+			<map id="thirdeditor">主编3</map>
+			<map id="thirdeditorcode">主编3arp</map>
+			<map id="othereditor">其他主编</map>
+			<map id="othereditorcode">其他主编arp</map>
+			<map id="firstsubeditor">副主编1</map>
+			<map id="firstsubeditorcode">副主编1arp</map>
+			<map id="secsubeditor">副主编2</map>
+			<map id="secsubeditorcode">副主编2arp</map>
+			<map id="thirdsubeditor">副主编3</map>
+			<map id="thirdsubeditorcode">副主编3arp</map>
+			<map id="othersubeditor">其他副主编</map>
+			<map id="othersubeditorcode">其他副主编arp</map>
+			<map id="firstauthor">编辑1</map>
+			<map id="firstauthorcode">编辑1arp</map>
+			<map id="secauthor">编辑2</map>
+			<map id="secauthorcode">编辑2arp</map>
+			<map id="threeauthor">编辑3</map>
+			<map id="threeauthorcode">编辑3arp</map>
+			<map id="fourauthor">编辑4</map>
+			<map id="fourauthorcode">编辑4arp</map>
+			<map id="fiveauthor">编辑5</map>
+			<map id="fiveauthorcode">编辑5arp</map>
+			<map id="otherauthor">其他编辑</map>
+			<map id="otherauthorcode">其他编辑arp</map>
+			<map id="examinestatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+	<!-- 	zhangs publish -->
+	<table name="t_publish" class="com.performances.model.TPublish" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="publishid">
+			<where id="title">title</where>
+			<where id="publishtype">publishtype</where>
+			<where id="firsteditor">firsteditor</where>
+		</key>
+
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">数据出版名称</map>
+			<map id="publishtype">doi号</map>
+			<map id="firsteditor">主编1</map>
+			<map id="firsteditorcode">主编1arp</map>
+			<map id="seceditor">主编2</map>
+			<map id="seceditorcode">主编2arp</map>
+			<map id="thirdeditor">主编3</map>
+			<map id="thirdeditorcode">主编3arp</map>
+			<map id="othereditor">其他主编</map>
+			<map id="othereditorcode">其他主编arp</map>
+			<map id="firstsubeditor">副主编1</map>
+			<map id="firstsubeditorcode">副主编1arp</map>
+			<map id="secsubeditor">副主编2</map>
+			<map id="secsubeditorcode">副主编2arp</map>
+			<map id="thirdsubeditor">副主编3</map>
+			<map id="thirdsubeditorcode">副主编3arp</map>
+			<map id="othersubeditor">其他副主编</map>
+			<map id="othersubeditorcode">其他副主编arp</map>
+			<map id="firstauthor">编辑1</map>
+			<map id="firstauthorcode">编辑1arp</map>
+			<map id="secauthor">编辑2</map>
+			<map id="secauthorcode">编辑2arp</map>
+			<map id="threeauthor">编辑3</map>
+			<map id="threeauthorcode">编辑3arp</map>
+			<map id="fourauthor">编辑4</map>
+			<map id="fourauthorcode">编辑4arp</map>
+			<map id="fiveauthor">编辑5</map>
+			<map id="fiveauthorcode">编辑5arp</map>
+			<map id="otherauthor">其他编辑</map>
+			<map id="otherauthorcode">其他编辑arp</map>
+			<map id="examinestatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+
+		</maps>
+
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+	<!-- 	zhangs report -->	
+	<table name="t_zx" class="com.performances.model.TZx" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="zxid">
+			<where id="title">title</where>
+			<where id="auditdepart">auditdepart</where>
+			<where id="firstauthor">firstauthor</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->		
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">报告题目</map>
+			<map id="auditleader">批示领导</map>
+			<map id="auditdepart">批示部门</map>
+			<map id="auditlevel">批示部门级别</map>
+			<map id="auditdate">批示日期</map>
+			<map id="numauthor">完成人数</map>
+			<map id="firstauthor">撰写人1</map>
+			<map id="firstauthorcode">撰写人1arp</map>
+			<map id="secauthor">撰写人2</map>
+			<map id="secauthorcode">撰写人2arp</map>
+			<map id="threeauthor">撰写人3</map>
+			<map id="threeauthorcode">撰写人3arp</map>
+			<map id="fourauthor">撰写人4</map>
+			<map id="fourauthorcode">撰写人4arp</map>
+			<map id="fiveauthor">撰写人5</map>
+			<map id="fiveauthorcode">撰写人5arp</map>
+			<map id="otherauthor">其他撰写人</map>
+			<map id="otherauthorcode">其他撰写人arp</map>
+			<map id="examinestatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	zhangs standed -->	
+	<table name="t_bz" class="com.performances.model.TBz" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="bzid">
+			<where id="title">title</where>
+			<where id="markid">markid</where>
+			<where id="firstauthor">firstauthor</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->		
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">标准名称</map>
+			<map id="markid">标准编号</map>
+			<map id="auditdepart">颁布单位</map>
+			<map id="auditlevel">标准类别</map>
+			<map id="auditdate">批准日期</map>
+			<map id="departorder">单位排序</map>
+			<map id="firstauthor">完成人1</map>
+			<map id="firstauthorcode">完成人1arp</map>
+			<map id="secauthor">完成人2</map>
+			<map id="secauthorcode">完成人2arp</map>
+			<map id="threeauthor">完成人3</map>
+			<map id="threeauthorcode">完成人3arp</map>
+			<map id="fourauthor">完成人4</map>
+			<map id="fourauthorcode">完成人4arp</map>
+			<map id="fiveauthor">完成人5</map>
+			<map id="fiveauthorcode">完成人5arp</map>
+			<map id="otherauthor">其他完成人</map>
+			<map id="otherauthorcode">其他完成人arp</map>
+			<map id="examinestatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	zhangs software -->	
+	<table name="t_rj" class="com.performances.model.TRj" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)-->
+		<matches>
+			<match type="0" key="">0</match>
+			<match type="0" key="无"></match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="1" key="万">10000</match>
+			<match type="5" key="VLOOKUP("></match>
+			<match type="4" key="#N/A"></match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="rjid">
+			<where id="title">title</where>
+			<where id="registernum">registernum</where>
+			<where id="firstauthor">firstauthor</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->		
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">软件名称</map>
+			<map id="registernum">登记号</map>
+			<map id="auditdate">登记批准日期</map>
+			<map id="copyright">著作权人</map>
+			<map id="othercopyright">其他著作权人</map>
+			<map id="departorder">单位排名</map>
+			<map id="firstauthor">设计人1</map>
+			<map id="firstauthorcode">设计人1arp</map>
+			<map id="secauthor">设计人2</map>
+			<map id="secauthorcode">设计人2arp</map>
+			<map id="threeauthor">设计人3</map>
+			<map id="threeauthorcode">设计人3arp</map>
+			<map id="fourauthor">设计人4</map>
+			<map id="fourauthorcode">设计人4arp</map>
+			<map id="fiveauthor">设计人5</map>
+			<map id="fiveauthorcode">设计人5arp</map>
+			<map id="otherauthor">其他设计人</map>
+			<map id="otherauthorcode">其他设计人arp</map>			
+			<!--  <map id="examinestatus">审核状态</map> -->
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	Linyh projects -->	
+	<table name="t_xm" class="com.performances.model.TXm" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="projectid">projectid</where>
+			<where id="collegeCode">collegeCode</where>
+			<where id="subCode">subCode</where>	
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="projectid">课题编号</map>
+			<map id="leader">课题组长</map>
+			<map id="name">课题全称</map>
+			<map id="provider">甲方</map>			
+			<map id="collegeCode">院级课题编码</map>
+			<map id="beginTime">开题年度</map>
+			<map id="endTime">结题年度</map>
+			<map id="subCode">子课题号</map>
+			<map id="subLeader">子课题负责人</map>
+			<map id="subLeaderCode">子课题负责人arp</map>
+			<map id="subName">子课题全称</map>			
+			<map id="subProjectStay">子课题核算经费</map>
+			<map id="taskCode">任务代码</map>
+			<map id="detailType">明细任务类型</map>
+			<map id="roleCode">项目人员角色代码</map>
+			<map id="score">分值</map>
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+	<!-- 	zhengxb projects statistic-->
+	<table name="project_statistic" class="com.performances.model.TProjectStatistic" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="usercode">usercode</where>
+		</key>
+
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="usercode">用户编号</map>
+			<map id="username">用户名</map>
+			<map id="domain">所属领域</map>
+			<map id="declare_level">声明级别</map>
+			<map id="zdfound02">02-重点基金</map>
+			<map id="cjzdfound0201">0201-参加重点基金</map>
+			<map id="jcqn07">07-杰青</map>
+			<map id="zxfound06">06-专项基金</map>
+			<map id="cxqt0a">0A-创新群体</map>
+			<map id="mission973">12-973任务</map>
+			<map id="gjhz21">41-国际合作</map>
+			<map id="jctjpt14">14-基础条件平台</map>
+			<map id="jcxgzzx16">16-基础性工作专项</map>
+			<map id="mission19">19-其他国家任务</map>
+			<map id="mission22">22-部委任务</map>
+			<map id="mission23">23-地方任务</map>
+			<map id="yzd31">31-院重大</map>
+			<map id="yfx32">32-院方向</map>
+			<map id="notcount">不计</map>
+			<map id="yqt39">39-院其他</map>
+			<map id="other99">99-其他</map>
+			<map id="gjhz41">41-国际合作</map>
+			<map id="cjzdyjjh0301">0301-参加重大研究计划</map>
+			<map id="msfound04">04-面上基金</map>
+			<map id="cjmsfound0401">04-01-参加面上基金</map>
+			<map id="mission86311">11-863任务</map>
+			<map id="kjzc13">13-科技支撑</map>
+			<map id="jg21">21-JG</map>
+			<map id="qywt25">25-企业委托</map>
+			<map id="yrc37">37-院人才</map>
+			<map id="slyqy51">51-所自主部署</map>
+			<!--<map id="szfound52">52-所长基金</map>-->
+			<map id="qtyth09">09-其他-研讨会</map>
+			<map id="zdfound01">01-重大基金</map>
+			<map id="cjzdfound0101">01-01-参加重大基金</map>
+			<map id="zdyjjh03">03-重大研究计划</map>
+			<map id="qnfound05">05-青年基金</map>
+			<map id="skfound0c">0C-社科基金</map>
+			<map id="gyxhyzx17">17-公益性行业专项</map>
+			<map id="hxwt24">24-横向委托</map>
+			<map id="cjjqrw0701">07-01-参加杰青任务</map>
+			<map id="yqtzdsys36">36-院其他-重点实验室</map>
+			<map id="kjzdzx15">15-科技重大专项</map>
+			<map id="cjzxfound0601">06-01-参加专项基金</map>
+			<map id="yyd33">33-院先导</map>
+			<map id="yzdbs34">34-院重点部署</map>
+			<map id="cjqnfound0501">05-01-参加青年基金</map>
+			<map id="yq08">08-优青</map>
+			<map id="dfrw12">1A-重点研发计划</map>
+			<map id="ysts35">35-院STS</map>
+			<map id="rkx18">18-软科学</map>
+			<map id="yqzz0b">0B-仪器研制</map>
+		</maps>
+
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	zhengxb writing -->	
+	<table name="t_writing" class="com.performances.model.Twriting" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="title">title</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="title">著作名称</map>
+			<map id="pubKind">出版类别</map>
+			<map id="writingKind">著作类别</map>
+			<map id="press">出版社</map>
+			<map id="interCooperate">是否国际合作</map>
+			<map id="wordCount">总字数</map>
+			<map id="first_editor">主编1</map>
+			<map id="first_editor_code">主编1arp</map>
+			<map id="second_editor">主编2</map>
+			<map id="second_editor_code">主编2arp</map>
+			<map id="third_editor">主编3</map>
+			<map id="third_editor_code">主编3arp</map>
+			<map id="other_editor">其他主编</map>
+			<map id="other_editor_code">其他主编arp</map>
+			<map id="first_subeditor">副主编1</map>
+			<map id="first_subeditor_code">副主编1arp</map>
+			<map id="second_subeditor">副主编2</map>
+			<map id="second_subeditor_code">副主编2arp</map>
+			<map id="third_subeditor">副主编3</map>
+			<map id="third_subeditor_code">副主编3arp</map>
+			<map id="other_subeditor">其他副主编</map>
+			<map id="other_subeditor_code">其他副主编arp</map>
+			<map id="first_author">作者1</map>
+			<map id="first_author_code">作者1arp</map>
+			<map id="second_author">作者2</map>
+			<map id="second_author_code">作者2arp</map>
+			<map id="third_author">作者3</map>
+			<map id="third_author_code">作者3arp</map>
+			<map id="fourth_author">作者4</map>
+			<map id="fourth_author_code">作者4arp</map>
+			<map id="fifth_author">作者5</map>
+			<map id="fifth_author_code">作者5arp</map>
+			<map id="other_author">其他作者</map>
+			<map id="other_author_code">其他作者arp</map>
+			<map id="isbn">ISBN</map>
+			<map id="auditStatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	
+	<!-- 	zhengxb award -->	
+	<table name="t_award" class="com.performances.model.TAward" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="year">year</where>
+			<where id="awardProjectName">awardProjectName</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="year">年度</map>
+			<map id="awardProjectName">奖励项目名称</map>
+			<map id="awardName">奖励名称</map>
+			<map id="unit">完成单位_第一及其他</map>
+			<map id="geoRank">我所排名</map>
+			<map id="department">授奖部门</map>
+			<map id="level">奖励级别</map>
+			<map id="rank">奖励等级</map>
+			<map id="numOfAwardee">人数</map>
+			<map id="awardeeOne">获奖人1</map>
+			<map id="awardeeCodeOne">获奖人1arp</map>
+			<map id="awardeeTwo">获奖人2</map>
+			<map id="awardeeCodeTwo">获奖人2arp</map>
+			<map id="awardeeThree">获奖人3</map>
+			<map id="awardeeCodeThree">获奖人3arp</map>
+			<map id="awardeeFour">获奖人4</map>
+			<map id="awardeeCodeFour">获奖人4arp</map>
+			<map id="awardeeFive">获奖人5</map>
+			<map id="awardeeCodeFive">获奖人5arp</map>
+			<map id="awardeeSix">获奖人6</map>
+			<map id="awardeeCodeSix">获奖人6arp</map>
+			<map id="awardeeSeven">获奖人7</map>
+			<map id="awardeeCodeSeven">获奖人7arp</map>
+			<map id="awardeeEight">获奖人8</map>
+			<map id="awardeeCodeEight">获奖人8arp</map>
+			<map id="awardeeNine">获奖人9</map>
+			<map id="awardeeCodeNine">获奖人9arp</map>
+			<map id="awardeeTen">获奖人10</map>
+			<map id="awardeeCodeTen">获奖人10arp</map>
+			<map id="awardeeOther">其他获奖人</map>
+			<map id="awardeeCodeOther">其他获奖人arp</map>
+			<map id="auditStatus">审核状态</map>
+			<map id="savetime">审核时间</map>
+			<map id="append">附件</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+	<!-- 	zhangshuo achievetrans -->
+	<table name="t_achievetrans" class="com.performances.model.TAchievetrans" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="name">name</where>
+			<where id="year">year</where>
+			<where id="code">code</where>
+		</key>
+
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">成果转化名称</map>
+			<map id="code">成果转化号</map>
+			<map id="achieveMoney">转化金额（万）</map>
+			<map id="year">转化年度</map>
+			<!--<map id="date">授权日期</map>
+			<map id="type">专利类别</map>
+			<map id="owner">专利权人</map>
+			<map id="rank">单位排名</map> -->
+			<map id="firstInvector">成果人1</map>
+			<map id="firstInvectorcode">成果人1arp</map>
+			<map id="secondInvector">成果人2</map>
+			<map id="secondInvectorcode">成果人2arp</map>
+			<map id="thirdInvector">成果人3</map>
+			<map id="thirdInvectorcode">成果人3arp</map>
+			<map id="fourthInvector">成果人4</map>
+			<map id="fourthInvectorcode">成果人4arp</map>
+			<map id="fifthInvector">成果人5</map>
+			<map id="fifthInvectorcode">成果人5arp</map>
+			<map id="otherInvector">其他成果人</map>
+			<map id="otherInvectorcode">其他成果人arp</map>
+
+		</maps>
+
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+
+	<!-- 	Linyh patent -->	
+	<table name="t_zl" class="com.performances.model.TZl" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="name">name</where>
+			<where id="year">year</where>
+			<where id="code">code</where>
+		</key>
+		
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="name">专利名称</map>
+			<map id="year">授权年度</map>
+			<map id="code">授权号</map>
+			<map id="date">授权日期</map>
+			<map id="type">专利类别</map>
+			<map id="owner">专利权人</map>
+			<map id="other">其他专利权人</map>
+			<map id="rank">单位排名</map>
+			<map id="firstInvector">发明人1</map>
+			<map id="firstInvectorcode">发明人1arp</map>
+			<map id="secondInvector">发明人2</map>
+			<map id="secondInvectorcode">发明人2arp</map>
+			<map id="thirdInvector">发明人3</map>
+			<map id="thirdInvectorcode">发明人3arp</map>
+			<map id="fourthInvector">发明人4</map>
+			<map id="fourthInvectorcode">发明人4arp</map>
+			<map id="fifthInvector">发明人5</map>
+			<map id="fifthInvectorcode">发明人5arp</map>
+			<map id="otherInvector">其他发明人</map>			
+			<map id="otherInvectorcode">其他发明人arp</map>
+			
+		</maps>
+		
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	<!-- 	Linyh 个数统计 -->	
+	<table name="t_achievement" class="com.performances.model.TResearch" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="usercode">usercode</where>
+		</key>
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="username">用户名称</map>
+			<map id="usercode">用户编号</map>
+			<map id="domain">领域</map>
+			<map id="paper_total_asl">第一通讯或作者</map>
+			<map id="paper_total">论文合计</map>
+			<map id="sci_pub_total_asl">SCI/SSCI已发表合计(第一或通讯作者)</map>
+			<map id="sci_pub_total">SCI/SSCI已发表合计</map>
+			<map id="sci_accept_total_asl">SCI/SSCI已接受合计(第一或通讯作者)</map>
+			<map id="sci_accept_total">SCI/SSCI已接受合计</map>
+			<map id="inland_total_asl">国内刊物合计(第一或通讯作者)</map>
+			<map id="inland_total">国内刊物合计</map>
+			<map id="ei_total_asl">EI收录合计(第一或通讯作者)</map>
+			<map id="ei_total">EI收录合计</map>
+			<map id="istp_total">ISTP收录合计</map>
+			<map id="abroad_total">其他国外刊物合计</map>
+			<map id="books_total">著作合计</map>
+			<map id="achievetrans_total">成果转化合计</map>
+			<map id="software_total">软件合计</map>
+			<map id="patent_total">专利合计</map>
+			<map id="award_total">奖励合计</map>			
+			<map id="report_total">咨询报告合计</map>
+			<map id="plan_total">规划合计</map>
+			<map id="standard_total">标准合计</map>
+			<map id="map_total">地图合计</map>
+			<map id="publish_total">数据出版合计</map>
+			<map id="achievetrans_total">成果转化合计</map>
+			<map id="thirdAssess_total">第三方评估合计</map>
+			<map id="dec_level">申报级别</map>
+		</maps>
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+	<!-- 工资统计表 -->
+	<table name="salary_statistic" class="com.performances.model.TSalaryStatistic" sheetIndex="0">
+		<!-- 映射条件  (0,NumberALL)(1,NumberPart)(2,DateAll)(3,DatePart)(4,StringAll)(5,ContainString)-->
+		<matches>
+			<match type="0" key="无">0</match>
+			<match type="0" key="NULL">0</match>
+			<match type="0" key=">9人">10</match>
+			<match type="0" key="(空白)">0</match>
+			<match type="1" key="万">10000</match>
+			<match type="4" key="#N/A"></match>
+			<match type="0" key="#N/A">0</match>
+		</matches>
+		<!-- 根据领域对象获取唯一ID  -->
+		<key id="id">
+			<where id="id">id</where>
+		</key>
+		<!-- 领域对象和Excel表的映射关系  -->
+		<maps>
+			<map id="username">用户名称</map>
+			<map id="usercode">用户编号</map>
+			<map id="sci_thesis_type">SSCI或SCI论文类型</map>
+			<map id="sci_thesis_first_count">SSCI或SCI论文一作数量</map>
+			<map id="sci_thesis_second_count">SSCI或SCI论文二作数量</map>
+			<map id="sci_thesis_third_count">SSCI或SCI论文三作数量</map>
+			<map id="sci_thesis_salary">SSCI或SCI论文工资</map>
+			<map id="nsci_thesis_type">国内核心及国际非SCI期刊类型</map>
+			<map id="nsci_thesis_first_count">国内核心及国际非SCI期刊一作数量</map>
+			<map id="nsci_thesis_second_count">国内核心及国际非SCI期刊二作数量</map>
+			<map id="nsci_thesis_third_count">国内核心及国际非SCI期刊三作数量</map>
+			<map id="nsci_thesis_salary">国内核心及国际非SCI期刊工资</map>
+			<map id="patent_type">发明授权专利类型</map>
+			<map id="patent_first_count">发明授权专利一作数量</map>
+			<map id="patent_second_count">发明授权专利二作数量</map>
+			<map id="patent_third_count">发明授权专利三作数量</map>
+			<map id="patent_salary">发明授权专利工资</map>
+			<map id="report_type">重大咨询报告类型</map>
+			<map id="report_first_count">重大咨询报告一作数量</map>
+			<map id="report_second_count">重大咨询报告二作数量</map>
+			<map id="report_third_count">重大咨询报告三作数量</map>
+			<map id="report_salary">重大咨询报告工资</map>
+			<map id="thesis_patent_report_sumup">论文_专利_报告工资总计</map>
+			<map id="n_plan_type">重大规划类型</map>
+			<map id="n_plan_first_count">重大规划一作数量</map>
+			<map id="n_plan_second_count">重大规划二作数量</map>
+			<map id="n_plan_third_count">重大规划三作数量</map>
+			<map id="n_plan_salary">重大规划工资</map>
+			<map id="p_plan_type">部门或省级规划类型</map>
+			<map id="p_plan_first_count">部门或省级规划一作数量</map>
+			<map id="p_plan_second_count">部门或省级规划二作数量</map>
+			<map id="p_plan_third_count">部门或省级规划三作数量</map>
+			<map id="p_plan_salary">部门或省级规划工资</map>
+			<map id="n_standard_type">国家标准类型</map>
+			<map id="n_standard_first_count">国家标准一作数量</map>
+			<map id="n_standard_second_count">国家标准二作数量</map>
+			<map id="n_standard_third_count">国家标准三作数量</map>
+			<map id="n_standard_salary">国家标准工资</map>
+			<map id="plan_standard_sumup">规划_标准工资总计</map>
+			<map id="writing_type">专著类型</map>
+			<map id="writing_first_count">专著一作数量</map>
+			<map id="writing_second_count">专著二作数量</map>
+			<map id="writing_third_count">专著三作数量</map>
+			<map id="writing_salary">专著工资</map>
+			<map id="national_map_type">国家地图类型</map>
+			<map id="national_map_first_count">国家地图一作数量</map>
+			<map id="national_map_second_count">国家地图二作数量</map>
+			<map id="national_map_third_count">国家地图三作数量</map>
+			<map id="national_map_salary">国家地图工资</map>
+			<map id="region_map_type">区域地图类型</map>
+			<map id="region_map_first_count">区域地图一作数量</map>
+			<map id="region_map_second_count">区域地图二作数量</map>
+			<map id="region_map_third_count">区域地图三作数量</map>
+			<map id="region_map_salary">区域地图工资</map>
+			<map id="writing_map_sumup">专著_地图工资总计</map>
+			<map id="all_sumup">工资总计</map>
+		</maps>
+		<!-- 数据库关联关系  -->
+		<updates>
+			<update></update>
+		</updates>
+	</table>
+</tables>
